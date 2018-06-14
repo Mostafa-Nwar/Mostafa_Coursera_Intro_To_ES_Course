@@ -9,13 +9,16 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c
+ * @brief implementation file to print statistical analytics value on some data set
  *
- * <Add Extended Description Here>
+ *	file operating on some data set (array test) and processing these datato generate the some statistics values like mean, manimum, minimum and median ; 
+	also the file has some display procedures to print generated values and print the data set itself 
+	also the file has a sorting decending procedure than sort the data set array 
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ *
+ * @author Mostafa Samir Nwar 
+ * @date 14/6/2018
  *
  */
 
@@ -41,3 +44,28 @@ void main() {
 }
 
 /* Add other Implementation File Code Here */
+
+void print_statistics(unsigned char * arr , int size ){
+	
+}
+//**********************************************************
+void print_array(unsigned char * arr , int size ){
+}
+//***********************************************************
+int find_median(unsigned char * arr, int size){
+}
+//**************************************************************
+int find_mean(unsigned char * arr, int size ){
+
+}
+//***************************************************************
+int find_maximum(unsigned char * arr , int size){
+
+}
+//******************************************************************
+int find_minimum(unsigned char * arr , int size ){
+}
+//**************************************************************
+void sort_array(unsigned char * arr , int size ){
+}
+
