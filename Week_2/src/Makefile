@@ -102,6 +102,7 @@ DEPENDSES=$(SOURCES:.c=.d)
 .PHONY: build
 build : $(SOURCES)
 	$(CC) $(CPPFLAGS) $(INCLUDES) $(CFLAGS) $(LDFLAGS) $^ -o c1m2.out
+	size c1m2.out
 #*************************************************************
 # Make a Rule for Generating all Object files for selected platform 
 .PHONY: compile-all
