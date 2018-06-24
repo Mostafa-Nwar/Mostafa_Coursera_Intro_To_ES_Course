@@ -54,7 +54,7 @@ SPECS = nosys.specs
 # General common GNU GCC Compiler Flags
 # -Wall to allow all warninnings , -Werror to treat every warning as error 
 # -g for debugging info, -std to determine which standard to compile according
-GEN_CFLAGS =-Wall -Werror -g -O0 -std=c99 
+GEN_CFLAGS = -g -O0 -std=c99 
 #*************************************************************
 # Make a Conditional Checking to Differ between the 2 Platforms to 
 # Apply the right specifications for each PLATFORM HOST or MSP432
@@ -118,7 +118,7 @@ DEPENDSES=$(SOURCES:.c=.d)
 # "size" is a GNU binutils tool that help to display report of sections size of .out file 
 .PHONY: build
 build : $(SOURCES)
-	$(CC) $(CPPFLAGS) $(INCLUDES) $(CFLAGS) $(LDFLAGS) $^ -o c1m2.out
+	$(CC) $(CPPFLAGS) -DVERBOSE -DCOURSE1 $(INCLUDES) $(CFLAGS) $(LDFLAGS) $^ -o c1m2.out
 	size c1m2.out
 #*************************************************************
 # Make a Rule for Generating all Object files for selected platform 

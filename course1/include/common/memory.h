@@ -21,7 +21,7 @@
  */
 #ifndef __MEMORY_H__
 #define __MEMORY_H__
-
+#include<stddef.h>
 /**
  * @brief Sets a value of a data array 
  *
@@ -89,5 +89,53 @@ void set_all(char * ptr, char value, unsigned int size);
  * @return void.
  */
 void clear_all(char * ptr, unsigned int size);
+/***********************************************/
+/*****************************************************************/
+/*****************************************************************/
+/******************* My Implenmented Functions ******************/
+/****************************************************************/
+/** Function to Copy memory bytes with checking for Overlapping */
+/* @param src >> pointer the  start address  of source bytes ****/
+/* @param dst >> pointer the  start address  of destination bytes*/
+/* @param length >> Length from start address to stop address of bytes*/
+/* @return uint8_t >> pointer to start address of copied bytes */
+uint8_t * my_memmove(uint8_t * src , uint8_t * dst , size_t length);
+/****************************************************************/
+/** Function to Copy memory bytes without checking for Overlapping */
+/* @param src >> pointer the  start address  of source bytes ****/
+/* @param dst >> pointer the  start address  of destination bytes*/
+/* @param length >> Length from start address to stop address of bytes*/
+/* @return uint8_t >> pointer to start address of copied bytes */
+uint8_t * my_memcopy(uint8_t * src , uint8_t * dst , size_t length);
+/****************************************************************/
+/** Function to Set some bytes of memory to a certain value */
+/* @param src >> pointer the  start address  of source bytes ****/
+/* @param length >> Length from start address to stop address of bytes*/
+/* @param value >> Set value to put in bytes */
+/* @return uint8_t >> pointer to start address of initialized bytes */
+uint8_t * my_memset(uint8_t * src , size_t length , uint8_t value);
+/****************************************************************/
+/** Function to Set some bytes of memory to zero */
+/* @param src >> pointer the  start address  of source bytes ****/
+/* @param length >> Length from start address to stop address of bytes*/
+/* @return uint8_t >> pointer to start address of zero bytes */
+uint8_t * my_memzero(uint8_t * src , size_t length );
+/*****************************************************************/
+/** Function to Reverse order of some bytes in memory */
+/* @param src >> pointer the  start address  of source bytes ****/
+/* @param length >> Length from start address to stop address of bytes*/
+/* @return uint8_t >> pointer to start address of reversed bytes */
+uint8_t * my_reverse(uint8_t * src , size_t length);
+/*****************************************************************/
+/** Function to Reserve determined number of 32-bit words */
+/* @param length >> size of Dynamically Allocated bytes, number of bytes */
+/* @return int32_t >> pointer to start address of allocated bytes */
+int32_t * reserve_words(size_t length);
+/*****************************************************************/
+/** Function to free Dynamic Allocated Memory */
+/* @param src >> pointer the  start address  of Allocated bytes ****/
+/* @return void >> return nothing */
+void * free_words(int32_t * src);
+
 
 #endif /* __MEMORY_H__ */

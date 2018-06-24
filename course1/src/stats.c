@@ -23,13 +23,15 @@
  */
 
 
-
+#include <stdint.h>
 #include <stdio.h>
+#include "platform.h"
 #include "stats.h"
 
 /* Size of the Data Set */
 #define SIZE (40)
 
+/******
 void main() {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
@@ -40,28 +42,33 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-	sort_array(test,SIZE);
+/*	sort_array(test,SIZE);
 	print_array(test,SIZE);
 	print_statistics(test,SIZE);
 
 }
+******/
+
 //**********************************************************
 void print_statistics(unsigned char * arr , int size ){
-	printf("******* The previous Showed Array are processed\nAnd produced these Statistics \n ");
-	printf("******* The Value of median is  :%d \n",find_median (arr,size));
-	printf("******* The Value of mean is    :%d \n",find_mean   (arr,size));
-	printf("******* The Value of maximum is :%d \n",find_maximum(arr,size));
-	printf("******* The Value of minimum is :%d \n",find_minimum(arr,size));
-	printf("*************************************\n");
+	PRINTF("******* The previous Showed Array are processed\nAnd produced these Statistics \n ");
+	PRINTF("******* The Value of median is  :%d \n",find_median (arr,size));
+	PRINTF("******* The Value of mean is    :%d \n",find_mean   (arr,size));
+	PRINTF("******* The Value of maximum is :%d \n",find_maximum(arr,size));
+	PRINTF("******* The Value of minimum is :%d \n",find_minimum(arr,size));
+	PRINTF("*************************************\n");
 }
 //**********************************************************
 void print_array(unsigned char * arr , int size ){
-	unsigned char i ; 
-	printf("The Sorted array is as follow :\n");
+#ifdef VERBOSE	
+unsigned char i ; 
+	PRINTF("The Array is as follow :\n");
 	for(i=0;i<size;++i){
-	printf("Elemet Number %d  is : %d \n",i+1,arr[i]);
+	PRINTF("Elemet Number %d  is : %d \n",i+1,arr[i]);
 	}
-	printf("*************************************\n");
+#else
+	PRINTF("*************** VERBOSE not defined **********************\n");
+#endif 
 }
 //***********************************************************
 int find_median(unsigned char * arr, int size){
